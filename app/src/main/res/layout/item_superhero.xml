@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/clSuperheroItem"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<ImageView
+		android:id="@+id/ivSuperhero"
+		android:layout_width="@dimen/smallAvatarWidth"
+		android:layout_height="@dimen/smallAvatarWidth"
+		android:contentDescription="@null"
+		app:layout_constraintBottom_toBottomOf="@id/ivSuperheroCutout"
+		app:layout_constraintEnd_toEndOf="@id/ivSuperheroCutout"
+		app:layout_constraintStart_toStartOf="@id/ivSuperheroCutout"
+		app:layout_constraintTop_toTopOf="@id/ivSuperheroCutout"
+		tools:srcCompat="@tools:sample/avatars" />
+
+	<ImageView
+		android:id="@+id/ivSuperheroCutout"
+		android:layout_width="@dimen/smallAvatarWidth"
+		android:layout_height="@dimen/smallAvatarWidth"
+		android:layout_marginEnd="@dimen/viewMargin"
+		android:contentDescription="@null"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:srcCompat="@drawable/ic_circle_cutout" />
+
+	<com.google.android.material.textview.MaterialTextView
+		android:id="@+id/lblSuperheroName"
+		style="@style/Text.H5"
+		android:layout_marginTop="0dp"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/viewMargin"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/ivSuperheroCutout"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="3D Man" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+import kotlin.collections.List;
+
+CREATE TABLE comic (
+      comicId INTEGER NOT NULL PRIMARY KEY,
+      title TEXT,
+      thumbnail TEXT
+  );
+
+selectAll:
+SELECT * FROM comic ORDER BY comicId;
+
+selectComicById:
+SELECT * FROM comic WHERE comicId = ?;
+
+-- Do not overwrite for character query (no thumbnail)
+insertComicIgnore:
+INSERT OR IGNORE INTO comic(comicId, title, thumbnail)
+VALUES (?, ?, ?);
+
+-- Do overwrite for character query (to add thumbnail)
+insertComicReplace:
+INSERT OR REPLACE INTO comic(comicId, title, thumbnail)
+VALUES (?, ?, ?);
+
+deleteComic:
+DELETE FROM comic WHERE comicId = ?;
+
+deleteAll:
+DELETE FROM comic;

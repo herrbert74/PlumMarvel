@@ -1,0 +1,7 @@
+<resources>
+
+	<!-- Avatars -->
+	<dimen name="smallAvatarWidth">96dp</dimen>
+	<dimen name="squadAvatarWidth">144dp</dimen>
+
+</resources>

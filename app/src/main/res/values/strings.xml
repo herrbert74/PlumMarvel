@@ -1,0 +1,24 @@
+<resources>
+	<string name="app_name">Plum Test</string>
+	<string name="remove">Remove</string>
+
+	<string name="squad_title">Superhero Squad Maker</string>
+	<string name="my_squad">My Squad</string>
+	<string name="no_description">No description available</string>
+
+	<string name="no_heroes">No heroes available</string>
+	<string name="reload">Reload</string>
+	<string name="can_t_connect_to_the_server">Can\'t connect to the server.</string>
+
+	<string name="last_appeared">"Last appeared in"</string>
+	<string name="last_comic_cover">Last comic cover</string>
+	<string name="second_last_comic_cover">Second last comic cover</string>
+	<string name="remove_hero_from_squad">Remove hero from squad?</string>
+	<string name="do_you_really_remove_hero_from_squad">Do you really want to remove this hero from your squad?</string>
+
+	<plurals name="other_comics">
+		<item quantity="zero">"and no other comic"</item>
+		<item quantity="one">"and 1 other comic"</item>
+		<item quantity="other">"and %1$d other comics"</item>
+	</plurals>
+</resources>

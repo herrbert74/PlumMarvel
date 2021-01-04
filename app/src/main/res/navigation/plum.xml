@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/plum.xml"
+	app:startDestination="@id/squadFragment">
+
+	<fragment
+		android:id="@+id/squadFragment"
+		android:name="com.babestudios.plum.ui.squad.SquadFragment"
+		android:label="UserListFragment"
+		tools:layout="@layout/fragment_squad">
+		<action
+			android:id="@+id/action_squadFragment_to_heroDetailsFragment"
+			app:destination="@id/heroDetailsFragment" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/heroDetailsFragment"
+		android:name="com.babestudios.plum.ui.hero.HeroDetailsFragment"
+		android:label="HeroDetailsFragment"
+		tools:layout="@layout/fragment_hero_details">
+	</fragment>
+
+</navigation>

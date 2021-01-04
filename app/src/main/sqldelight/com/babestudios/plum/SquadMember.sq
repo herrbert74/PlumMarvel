@@ -1,0 +1,25 @@
+import kotlin.collections.List;
+
+CREATE TABLE squadMember (
+      id INTEGER NOT NULL PRIMARY KEY
+  );
+
+selectAll:
+SELECT squadMember.id, description, name, thumbnailPath
+FROM squadMember
+INNER JOIN marvelCharacter
+ON squadMember.id = marvelCharacter.id
+ORDER BY name;
+
+selectSquadMemberById:
+SELECT * FROM squadMember WHERE id = ?;
+
+insertSquadMember:
+INSERT OR IGNORE INTO squadMember(id)
+VALUES (?);
+
+deleteSquadMember:
+DELETE FROM squadMember WHERE id = ?;
+
+deleteAll:
+DELETE FROM squadMember;

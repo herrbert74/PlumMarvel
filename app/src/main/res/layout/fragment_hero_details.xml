@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	tools:context=".ui.PlumActivity">
+
+	<com.babestudios.base.view.ParallaxAppBarView
+		android:id="@+id/pabHeroDetails"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/appBarHeight"
+		android:theme="@style/AppTheme.AppBarOverlay" />
+
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/fabHeroDetailsRecruit"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/screenMargin"
+		app:layout_anchor="@id/pabHeroDetails"
+		app:layout_anchorGravity="bottom|end"
+		app:srcCompat="@drawable/ic_favorite" />
+
+	<com.babestudios.base.view.MultiStateView
+		android:id="@+id/msvHeroDetails"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
+		app:msv_emptyView="@layout/multi_state_view_empty"
+		app:msv_errorView="@layout/multi_state_view_error"
+		app:msv_loadingView="@layout/multi_state_view_progress"
+		app:msv_viewState="content">
+
+		<androidx.core.widget.NestedScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<ProgressBar
+					android:id="@+id/progressbar"
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:indeterminate="true"
+					android:indeterminateBehavior="cycle"
+					android:visibility="gone"
+					app:layout_constraintLeft_toLeftOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					tools:layout_constraintLeft_creator="1"
+					tools:layout_constraintTop_creator="1" />
+
+				<TextView
+					android:id="@+id/lblHeroDetailsDescription"
+					style="@style/Text"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/screenMargin"
+					android:paddingTop="@dimen/viewMarginSmall"
+					android:layout_marginEnd="@dimen/screenMargin"
+					android:layout_marginBottom="@dimen/screenMargin"
+					app:layout_constraintLeft_toLeftOf="parent"
+					app:layout_constraintRight_toRightOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					tools:text="Lorem ipsum" />
+
+				<androidx.constraintlayout.widget.Guideline
+					android:id="@+id/glHeroDetails"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					app:layout_constraintGuide_percent="0.5"/>
+
+				<TextView
+					android:id="@+id/lblHeroDetailsLastAppearedIn"
+					style="@style/Text.H6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="@dimen/screenMargin"
+					android:layout_marginTop="@dimen/screenMargin"
+					app:layout_constraintLeft_toLeftOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/lblHeroDetailsDescription"
+					android:text="@string/last_appeared" />
+
+				<ImageView
+					android:id="@+id/ivHeroDetailsComics1"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_margin="@dimen/screenMargin"
+					app:layout_constraintEnd_toStartOf="@+id/glHeroDetails"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/lblHeroDetailsLastAppearedIn"
+					android:contentDescription="@string/last_comic_cover" />
+
+				<ImageView
+
+					android:id="@+id/ivHeroDetailsComics2"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_margin="@dimen/screenMargin"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toEndOf="@+id/glHeroDetails"
+					app:layout_constraintTop_toBottomOf="@id/lblHeroDetailsLastAppearedIn"
+					android:contentDescription="@string/second_last_comic_cover" />
+
+				<TextView
+					android:id="@+id/lblHeroDetailsComics1Description"
+					style="@style/Text.Caption"
+					android:layout_width="0dp"
+					android:gravity="center"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/screenMargin"
+					android:layout_marginEnd="@dimen/screenMargin"
+					app:layout_constraintEnd_toStartOf="@+id/glHeroDetails"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/ivHeroDetailsComics1"
+					tools:text="Hulk (2008) #55" />
+
+				<TextView
+					android:id="@+id/lblHeroDetailsComics2Description"
+					style="@style/Text.Caption"
+					android:gravity="center"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="@dimen/screenMargin"
+					android:layout_marginTop="@dimen/screenMargin"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toEndOf="@+id/glHeroDetails"
+					app:layout_constraintTop_toBottomOf="@id/ivHeroDetailsComics1"
+					tools:text="Hulk (2008) #54" />
+
+				<TextView
+					android:id="@+id/lblHeroDetailsAlso"
+					style="@style/Text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginEnd="@dimen/screenMargin"
+					android:layout_marginTop="@dimen/screenMargin"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/lblHeroDetailsComics1Description"
+					tools:text="and 1 other comic" />
+
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+		</androidx.core.widget.NestedScrollView>
+	</com.babestudios.base.view.MultiStateView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

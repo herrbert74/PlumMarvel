@@ -1,0 +1,29 @@
+import kotlin.collections.List;
+
+CREATE TABLE marvelCharacter (
+      id INTEGER NOT NULL PRIMARY KEY,
+      name TEXT,
+      description TEXT,
+      thumbnailPath TEXT
+  );
+
+selectAll:
+SELECT * FROM marvelCharacter ORDER BY name;
+
+selectAllWithOffset:
+SELECT * FROM marvelCharacter ORDER BY name
+LIMIT ?
+OFFSET ?;
+
+selectMarvelCharacterById:
+SELECT * FROM marvelCharacter WHERE id = ?;
+
+insertMarvelCharacter:
+INSERT OR REPLACE INTO marvelCharacter(id, name, description, thumbnailPath)
+VALUES (?, ?, ?, ?);
+
+deleteMarvelCharacter:
+DELETE FROM marvelCharacter WHERE id = ?;
+
+deleteAll:
+DELETE FROM marvelCharacter;

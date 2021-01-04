@@ -1,0 +1,26 @@
+import kotlin.collections.List;
+
+CREATE TABLE marvelCharacter_Comic (
+      character_id INTEGER NOT NULL,
+      comic_id INTEGER NOT NULL
+  );
+
+selectAll:
+SELECT * FROM marvelCharacter_Comic ORDER BY character_id;
+
+selectComicsForMarvelCharacterById:
+SELECT marvelCharacter_Comic.comic_id, comic.title, comic.thumbnail
+FROM marvelCharacter_Comic
+INNER JOIN comic
+ON marvelCharacter_Comic.comic_id = comic.comicId
+WHERE character_id = ?;
+
+insertMarvelCharacterWithComic:
+INSERT OR REPLACE INTO marvelCharacter_Comic(character_id, comic_id)
+VALUES (?, ?);
+
+deleteMarvelCharacter:
+DELETE FROM marvelCharacter_Comic WHERE character_id = ?;
+
+deleteAll:
+DELETE FROM marvelCharacter_Comic;
